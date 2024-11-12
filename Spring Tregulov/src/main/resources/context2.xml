@@ -9,23 +9,15 @@
 	   		http://www.springframework.org/schema/context
 	   		http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 
-    <context:property-placeholder location="classpath:myApp.properties"/>
+    <!--    <bean id="myPet"-->
+    <!--          class="com.tregulov.spring.Dog"-->
+    <!--          scope="prototype">-->
+    <!--    </bean>-->
 
-    <bean id = "myPet"
-          class = "com.tregulov.spring.Cat">
-    </bean>
-
-    <bean id = "myPerson"
-          class="com.tregulov.spring.Persen">
-<!--        <constructor-arg ref="myPet"/>-->
-        <property name="pet" ref="myPet"/>
-
-<!--        <property name="surname" value="Ермолаев"/>-->
-<!--        <property name="age" value="35"/>-->
-
-        <property name="surname" value="${person.surname}"/>
-        <property name="age" value="${person.age}"/>
-
+    <bean id="myPet"
+          class="com.tregulov.spring.Dog"
+          init-method="init"
+          destroy-method="destroy">
     </bean>
 
 </beans>
